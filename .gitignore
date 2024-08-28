@@ -1,0 +1,5 @@
+/* Keep CMakeLists.txt from Github */
+CMakeLists.txt
+
+/* Keep cmake-build-debug from Github */
+cmake-build-debug
