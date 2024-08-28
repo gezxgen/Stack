@@ -6,14 +6,15 @@
 
 char get_main(void) {
         printf("---------- Funktionsmenu ----------\n");
-        printf("0 - Load stack\n");
         printf("1 - Append\n");
         printf("2 - Pop last\n");
         printf("3 - Pop first\n");
         printf("4 - Stack count\n");
         printf("5 - Stack reset\n");
         printf("6 - Stack info\n");
-        printf("7 - Terminate\n");
+        printf("7 - Load stack\n");
+        printf("8 - Safe stack\n");
+        printf("9 - Terminate\n");
         char func_eingabe = (char)getch();
 
         return func_eingabe;

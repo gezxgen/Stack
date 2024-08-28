@@ -13,15 +13,10 @@ int main() {
         int *stack = NULL;
 
         /* Test */
-        while (eingabe != '7') {
+        while (eingabe != '9') {
                 eingabe = get_main();
 
                 switch (eingabe) {
-                        /* Load stack */
-                case 0:
-                        printf("Not implemented yet...");
-                        break;
-
                         /* Append */
                 case '1':
                         printf("Which number would you like to append? ");
@@ -62,6 +57,16 @@ int main() {
                         /* Stack info */
                 case '6':
                         print_stack(stack, length);
+                        break;
+
+                        /* Load stack */
+                case '7':
+                        printf("Not implemented yet...");
+                        break;
+                        /* Save stack */
+
+                case '8':
+                        printf("Not implemented yet...");
                         break;
 
                         /* Wrong entry */
