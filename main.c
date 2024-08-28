@@ -48,12 +48,15 @@ int main() {
 
                         /* Stack count */
                 case '4':
-                        printf("%d", eingabe);
+                        printf("Die laenge des Stacks betraegt: %d\n\n", length);
                         break;
 
                         /* Stack reset */
                 case '5':
-                        printf("%d", eingabe);
+                        length = 0;
+                        free(stack);
+                        stack = NULL;
+                        printf("Stack wurde zurueckgesetzt\n\n");
                         break;
 
                         /* Stack info */
