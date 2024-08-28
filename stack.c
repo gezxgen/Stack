@@ -5,7 +5,6 @@
 #import "stack.h"
 
 char get_main(void) {
-        int func_eingabe = 0;
         printf("---------- Funktionsmenu ----------\n");
         printf("0 - Load stack\n");
         printf("1 - Append\n");
@@ -15,7 +14,7 @@ char get_main(void) {
         printf("5 - Stack reset\n");
         printf("6 - Stack info\n");
         printf("7 - Terminate\n");
-        func_eingabe = getch();
+        char func_eingabe = (char)getch();
 
         return func_eingabe;
 }
@@ -23,8 +22,7 @@ char get_main(void) {
 void print_stack(int *first, int length) {
         printf("---------- Stackinfo ----------\n");
         for (int i=0; i<length; i++) {
-                printf("%d\t- %d\n", i, *first);
-                first += 1;
+                printf("%d\t- %d\n", i, first[i]);
         }
         printf("\n");
 }
