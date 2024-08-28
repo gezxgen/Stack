@@ -47,7 +47,7 @@ int * append(int *first, int length, int num) {
         }
 }
 
-int * pop(int *first, int length, int num) {
+int * pop_last(int *first, int length, int num) {
         if (length <= 1) {
                 free(first);
                 return NULL;

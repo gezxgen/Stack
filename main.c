@@ -33,7 +33,7 @@ int main() {
 
                         /* Pop last */
                 case '2':
-                        stack = pop(stack, length, num);
+                        stack = pop_last(stack, length, num);
                         length--;
                         printf("Number popped\n\n");
                         break;
