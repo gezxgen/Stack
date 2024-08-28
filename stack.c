@@ -47,7 +47,7 @@ int * append(int *first, int length, int num) {
         }
 }
 
-int * pop_last(int *first, int length, int num) {
+int * pop(int *first, int length, int is_normal) {
         if (length <= 1) {
                 free(first);
                 return NULL;
@@ -55,7 +55,11 @@ int * pop_last(int *first, int length, int num) {
                 int * new_stack = malloc((length - 1) * sizeof(int));
 
                 for (int i = 0; i < length-1; i++) {
-                        new_stack[i] = first[i];
+                        if (is_normal) {
+                                new_stack[i] = first[i];
+                        } else {
+                                new_stack[i] = first[i+1];
+                        }
                 }
                 free(first);
                 return new_stack;
