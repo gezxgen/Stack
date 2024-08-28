@@ -11,10 +11,12 @@ int main() {
         int length = 0;
         char eingabe = 0;
         int *stack = NULL;
+        int * ptrlen = &length;
 
         /* Test */
         while (eingabe != '9') {
                 eingabe = get_main();
+                system("cls");
 
                 switch (eingabe) {
                         /* Append */
@@ -61,12 +63,12 @@ int main() {
 
                         /* Load stack */
                 case '7':
-                        printf("Not implemented yet...");
+                        stack = load_stack(ptrlen);
                         break;
-                        /* Save stack */
 
+                        /* Save stack */
                 case '8':
-                        printf("Not implemented yet...");
+                        save_stack(stack, length);
                         break;
 
                         /* Wrong entry */

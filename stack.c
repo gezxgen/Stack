@@ -64,3 +64,29 @@ int * pop(int *first, int length, int is_normal) {
                 return new_stack;
         }
 }
+
+int* load_stack(int * length) {
+        int num;
+        int * stack = NULL;
+        *length = 0;
+        FILE *fpt = fopen("data.csv", "r");
+
+        while (fscanf(fpt, "%d%*[,\n ]", &num) == 1) {
+                stack = append(stack, *length, num);
+                (*length)++;
+        }
+
+        fclose(fpt);
+        printf("Stack loaded\n\n");
+        return stack;
+}
+
+void save_stack(int * stack, int length) {
+        FILE *fpt = fopen("data.csv", "w");
+        for (int i=0; i<length-1; i++) {
+                fprintf(fpt, "%d, ", stack[i]);
+        }
+        fprintf(fpt, "%d", stack[length-1]);
+        fclose(fpt);
+        printf("Numbers saved\n\n");
+}
