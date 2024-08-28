@@ -46,3 +46,18 @@ int * append(int *first, int length, int num) {
                 return new_stack;
         }
 }
+
+int * pop(int *first, int length, int num) {
+        if (length <= 1) {
+                free(first);
+                return NULL;
+        } else {
+                int * new_stack = malloc((length - 1) * sizeof(int));
+
+                for (int i = 0; i < length-1; i++) {
+                        new_stack[i] = first[i];
+                }
+                free(first);
+                return new_stack;
+        }
+}

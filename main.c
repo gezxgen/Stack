@@ -28,13 +28,16 @@ int main() {
                         scanf("%d", &num);
                         stack = append(stack, length, num);
                         length++;
-                        printf("Number added\n\n");
+                        printf("Number appended\n\n");
                         break;
 
                         /* Pop last */
                 case '2':
-                        printf("%d", eingabe);
+                        stack = pop(stack, length, num);
+                        length--;
+                        printf("Number popped\n\n");
                         break;
+
 
                         /* Pop first */
                 case '3':
