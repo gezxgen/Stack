@@ -15,13 +15,10 @@ int main() {
         int num;
         int length = 0;
         char eingabe = 0;
-        int stack[1];
-        int *first = &stack[0];
-        stack[0] = 0;
+        int *stack = NULL;
 
         /* Test */
         while (eingabe != '7') {
-                length = sizeof(stack) / sizeof(stack[0]);
                 eingabe = get_main();
 
                 switch (eingabe) {
@@ -34,17 +31,8 @@ int main() {
                 case '1':
                         printf("Which number would you like to append? ");
                         scanf("%d", &num);
-                        if (stack[0] == 0) {
-                                stack[0] = num;
-                        } else {
-                                printf("%p\n", &first);
-                                first = append(first, length, num);
-                                printf("%p\n", &first);
-                                for (int i=0; i<length+1; i++) {
-                                        stack[i] = *first;
-                                        first += 1;
-                                }
-                        }
+                        stack = append(stack, length, num);
+                        length++;
                         printf("Number added\n\n");
                         break;
 
@@ -70,7 +58,7 @@ int main() {
 
                         /* Stack info */
                 case '6':
-                        print_stack(first, length);
+                        print_stack(stack, length);
                         break;
 
                         /* Wrong entry */
@@ -78,6 +66,7 @@ int main() {
                         printf("Invalid entry\n\n");
                 }
         }
+        free(stack);
 }
 
 char get_main(void) {
@@ -106,14 +95,20 @@ void print_stack(int *first, int length) {
 }
 
 int * append(int *first, int length, int num) {
-        int new_stack[length + 1];
-        int * new_first = &new_stack[0];
-        new_stack[length] = num;
+        if (first == NULL) {
+                int *new_stack = malloc(1 * sizeof(int));
+                new_stack[0] = num;
+                return new_stack;
+        } else {
+                int *new_stack = malloc((length + 1) * sizeof(int));
 
-        for (int i=0; i<length; i++) {
-                new_stack[i] = *first;
-                first += 1;
+                for (int i = 0; i < length; i++) {
+                        new_stack[i] = first[i];
+                }
+
+                new_stack[length] = num;
+                free(first);
+                return new_stack;
         }
-
-        return new_first;
 }
+
