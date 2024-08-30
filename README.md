@@ -11,11 +11,11 @@ This document provides comprehensive documentation for a C program that implemen
 - [Stack Module](#stack-module)
     - [Imports](#imports-1)
     - [Function: `get_main`](#function-get_main)
-    - [Function: `print_stack`](#function-print_stack)
-    - [Function: `append`](#function-append)
-    - [Function: `pop`](#function-pop)
-    - [Function: `load_stack`](#function-load_stack)
-    - [Function: `save_stack`](#function-save_stack)
+    - [Function: `print_stack`](#function-print_stackint-first-int-length)
+    - [Function: `append`](#function-appendint-first-int-length-int-num)
+    - [Function: `pop`](#function-popint-first-int-length-int-is_normal)
+    - [Function: `load_stack`](#function-load_stackint-length)
+    - [Function: `save_stack`](#function-save_stackint-stack-int-length)
 - [Summary](#summary)
 
 ## Overview
